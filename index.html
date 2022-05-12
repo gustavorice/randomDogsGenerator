@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cachorrinhos aleatórios</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" media="(max-width: 800px)" href="css_mobile.css" />
+  </head>
+  <body>
+    <div class="home">
+      <div class="topo">
+        <button class="c-button c-button--gooey" onclick="renderDogs();">
+          Clique para gerar um cachorrinho
+          <div class="c-button__blobs">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </button>
+        <svg
+          style="display: block; height: 0; width: 0"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <filter id="goo">
+              <feGaussianBlur
+                result="blur"
+                stdDeviation="10"
+                in="SourceGraphic"
+              ></feGaussianBlur>
+              <feColorMatrix
+                result="goo"
+                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                mode="matrix"
+                in="blur"
+              ></feColorMatrix>
+              <feBlend in2="goo" in="SourceGraphic"></feBlend>
+            </filter>
+          </defs>
+        </svg>
+        <br />
+        <p>Você ainda não gerou nenhum cachorrinho :(</p>
+      </div>
+    </div>
+
+    <script src="dogs.js"></script>
+  </body>
+</html>
